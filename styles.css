@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --tumo-yellow: #fff000;
+  --tumo-black: #1a1a1a;
+  --tumo-white: #ffffff;
+  --tumo-red: #ce2626;
+  --tumo-gray: #e0e0e0;
+  --tumo-dark-gray: #555555;
+  --tumo-light-gray: #888;
+  --tumo-bg: #f5f5f0;
+  --border-radius: 8px;
+  --transition: all 0.2s ease;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background: var(--tumo-bg);
+}
+
+/* ── Layout ── */
+
+.ws-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.ws-card {
+  background: var(--tumo-white);
+  border: 2px solid var(--tumo-black);
+  border-radius: 12px;
+  box-shadow: 6px 6px 0px var(--tumo-black);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ── Header ── */
+
+.ws-header {
+  margin-bottom: 2rem;
+}
+
+.ws-badge {
+  display: inline-block;
+  background: var(--tumo-red);
+  color: var(--tumo-white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border: 1.5px solid var(--tumo-black);
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.ws-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--tumo-black);
+  line-height: 1.2;
+}
+
+/* ── Form ── */
+
+.ws-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--tumo-black);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.required {
+  color: var(--tumo-red);
+  margin-left: 2px;
+}
+
+.field-hint {
+  font-size: 0.75rem;
+  color: var(--tumo-dark-gray);
+  margin-top: 2px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--tumo-gray);
+  margin: 0.25rem 0;
+}
+
+/* ── Inputs & Selects ── */
+
+.field input,
+.field select {
+  appearance: none;
+  background: var(--tumo-white);
+  border: 2px solid var(--tumo-black);
+  border-radius: var(--border-radius);
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--tumo-black);
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.field input:hover,
+.field select:hover {
+  border-color: var(--tumo-dark-gray);
+  box-shadow: 3px 3px 0px var(--tumo-red);
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--tumo-black);
+  box-shadow: 4px 4px 0px var(--tumo-black);
+}
+
+.field input:focus::placeholder {
+  color: var(--tumo-dark-gray);
+}
+
+.field input::placeholder {
+  color: var(--tumo-light-gray);
+}
+
+.field select:invalid {
+  color: var(--tumo-light-gray);
+}
+
+/* ── Button ── */
+
+.btn-submit {
+  margin-top: 0.5rem;
+  padding: 14px;
+  background: var(--tumo-red);
+  color: var(--tumo-white);
+  border: 2px solid var(--tumo-black);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 4px 4px 0px var(--tumo-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background: var(--tumo-black);
+  color: var(--tumo-yellow);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--tumo-red);
+}
+
+.btn-submit:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px var(--tumo-black);
+}
+
+.btn-submit:focus-visible {
+  outline: 3px solid var(--tumo-yellow);
+  outline-offset: 2px;
+}
+
+.btn-arrow {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.btn-submit:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 520px) {
+  .ws-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .ws-title {
+    font-size: 1.35rem;
+  }
+}

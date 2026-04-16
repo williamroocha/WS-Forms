@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Inscrições para o Workshop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ws-page">
+      <div class="ws-card" role="main">
+        <header class="ws-header">
+          <span class="ws-badge">Workshop</span>
+          <h1 class="ws-title">Alterações</h1>
+        </header>
+
+        <form class="ws-form" action="subscribe-ws" method="post" novalidate>
+          <div class="field">
+            <label for="username">
+              Username <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+              autocomplete="username"
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <div class="field">
+            <label for="coach">
+              Learning Coach <span class="required" aria-hidden="true">*</span>
+            </label>
+            <select id="coach" name="coach" required aria-required="true">
+              <option value="" disabled selected>Seleciona o coach</option>
+              <option value="antonio-vasconcelos">António Vasconcelos</option>
+              <option value="artur-monteiro">Artur Monteiro</option>
+              <option value="diogo-goncalves">Diogo Gonçalves</option>
+              <option value="felisberto-mendonca">Felisberto Mendonça</option>
+              <option value="francisco-barbosa">Francisco Barbosa</option>
+              <option value="francisco-gameiro">Francisco Gameiro</option>
+              <option value="javiera-espinosa">Javiera Espinosa</option>
+              <option value="juan-aldana">Juan Aldana</option>
+              <option value="leonardo-ventura">Leonardo Ventura</option>
+              <option value="maria-santos">Maria Madalena Santos</option>
+              <option value="matilde-bandeira">Matilde Bandeira</option>
+              <option value="pedro-lopes">Pedro Lopes</option>
+              <option value="sandro-lima">Sandro Lima</option>
+              <option value="shira-guambe">Shira Guambe</option>
+              <option value="vasco-oliveira">Vasco Oliveira</option>
+              <option value="william-rocha">William Rocha</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="grupo">
+              Grupo <span class="required" aria-hidden="true">*</span>
+            </label>
+            <select id="grupo" name="grupo" required aria-required="true">
+              <option value="" disabled selected>Seleciona o grupo</option>
+              <option value="1">Grupo 1</option>
+              <option value="2">Grupo 2</option>
+              <option value="3">Grupo 3</option>
+              <option value="4">Grupo 4</option>
+              <option value="5">Grupo 5</option>
+              <option value="6">Grupo 6</option>
+              <option value="7">Grupo 7</option>
+              <option value="8">Grupo 8</option>
+            </select>
+          </div>
+
+          <div class="divider" role="separator"></div>
+
+          <div class="field">
+            <label for="workshop">
+              Workshop <span class="required" aria-hidden="true">*</span>
+            </label>
+            <select id="workshop" name="workshop" required aria-required="true">
+              <option value="" disabled selected>Seleciona o workshop</option>
+              <option value="fotografia">Fotografia</option>
+              <option value="cinema">Cinema</option>
+              <option value="game-dev">Desenvolvimento de Jogos</option>
+              <option value="programacao">Programação</option>
+              <option value="robotica">Robótica</option>
+              <option value="animacao">Animação</option>
+              <option value="design">Design Gráfico</option>
+              <option value="musica">Música</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="acao">
+              Ação <span class="required" aria-hidden="true">*</span>
+            </label>
+            <select id="acao" name="acao" required aria-required="true">
+              <option value="" disabled selected>Escolhe uma ação</option>
+              <option value="adicionar">Adicionar</option>
+              <option value="remover">Remover</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            ENVIAR
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
