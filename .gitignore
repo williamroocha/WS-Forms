@@ -1,1 +1,4 @@
 node_modules
+.env.local
+secrets.json
+sync-491216-cd38879a7148.json

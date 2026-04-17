@@ -110,5 +110,57 @@
         </form>
       </div>
     </div>
+
+    <script>
+      document.querySelector('.ws-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const submitBtn = form.querySelector('.btn-submit');
+
+        // Basic client-side validation
+        const fields = form.querySelectorAll('[required]');
+        for (const field of fields) {
+          if (!field.value) {
+            alert('Por favor, preenche todos os campos obrigatórios.');
+            field.focus();
+            return;
+          }
+        }
+
+        const payload = {
+          username: form.username.value.trim(),
+          coach: form.coach.value,
+          grupo: form.grupo.value,
+          workshop: form.workshop.value,
+          acao: form.acao.value,
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'A enviar…';
+
+        try {
+          const response = await fetch('/api/subscribe-ws', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            alert('✅ Sucesso! A tua inscrição foi registada.');
+            form.reset();
+          } else {
+            alert('❌ Erro: ' + (data.error || 'Ocorreu um problema. Tenta novamente.'));
+          }
+        } catch (err) {
+          alert('❌ Erro de ligação. Verifica a tua internet e tenta novamente.');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'ENVIAR <span class="btn-arrow" aria-hidden="true">→</span>';
+        }
+      });
+    </script>
   </body>
 </html>
